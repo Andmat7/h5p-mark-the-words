@@ -4,7 +4,7 @@
  * Mark The Words module
  * @external {jQuery} $ H5P.jQuery
  */
-H5P.MarkTheWords = (function ($, Question, Word, KeyboardNav, XapiGenerator) {
+H5P.MarkTheWordsIDO = (function ($, Question, Word, KeyboardNav, XapiGenerator) {
   /**
    * Initialize module.
    *
@@ -545,7 +545,7 @@ H5P.MarkTheWords = (function ($, Question, Word, KeyboardNav, XapiGenerator) {
    * @see {@link https://github.com/h5p/h5p-question/blob/1558b6144333a431dd71e61c7021d0126b18e252/scripts/question.js#L1236|Called from H5P.Question}
    */
   MarkTheWords.prototype.registerDomElements = function () {
-    
+
     if (this.params.media && this.params.media.library) {
       var type = this.params.media.library.split(' ')[0];
       if (type === 'H5P.Image') {
