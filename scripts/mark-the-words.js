@@ -9,7 +9,7 @@ H5P.MarkTheWordsIDO = (function ($, Question, Word, KeyboardNav, XapiGenerator) 
    * Initialize module.
    *
    * @class H5P.MarkTheWords
-   * @extends H5P.Question
+   * @extends H5P.QuestionIDO
    * @param {Object} params Behavior settings
    * @param {Number} contentId Content identification
    * @param {Object} contentData Object containing task specific content data
@@ -315,7 +315,7 @@ H5P.MarkTheWordsIDO = (function ($, Question, Word, KeyboardNav, XapiGenerator) 
 
     var scorePoints;
     if (self.params.behaviour.showScorePoints) {
-      scorePoints = new H5P.Question.ScorePoints();
+      scorePoints = new H5P.QuestionIDO.ScorePoints();
     }
 
     this.selectableWords.forEach(function (entry) {
@@ -339,7 +339,7 @@ H5P.MarkTheWordsIDO = (function ($, Question, Word, KeyboardNav, XapiGenerator) 
     var score = answers.score;
 
     //replace editor variables with values, uses regexp to replace all instances.
-    var scoreText = H5P.Question.determineOverallFeedback(this.params.overallFeedback, score / this.answers).replace(/@score/g, score.toString())
+    var scoreText = H5P.QuestionIDO.determineOverallFeedback(this.params.overallFeedback, score / this.answers).replace(/@score/g, score.toString())
       .replace(/@total/g, this.answers.toString())
       .replace(/@correct/g, answers.correct.toString())
       .replace(/@wrong/g, answers.wrong.toString())
@@ -605,4 +605,4 @@ H5P.MarkTheWordsIDO = (function ($, Question, Word, KeyboardNav, XapiGenerator) 
   };
 
   return MarkTheWords;
-}(H5P.jQuery, H5P.Question, H5P.MarkTheWords.Word, H5P.KeyboardNav, H5P.MarkTheWords.XapiGenerator));
+}(H5P.jQuery, H5P.QuestionIDO, H5P.MarkTheWords.Word, H5P.KeyboardNav, H5P.MarkTheWords.XapiGenerator));

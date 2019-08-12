@@ -138,7 +138,7 @@ H5P.MarkTheWords.Word = (function () {
      * Reveal result
      *
      * @public
-     * @param {H5P.Question.ScorePoints} scorePoints
+     * @param {H5P.QuestionIDO.ScorePoints} scorePoints
      */
     this.markCheck = function (scorePoints) {
       if (this.isSelected()) {
